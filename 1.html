@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>根据给定年份月份计算当月天数</title>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css"></link>
+    <script>
+        function calc(){
+            //平年2月28天，闰年2月29天
+            var yearStr=document.getElementById("year").value;
+            var monthStr=document.getElementById("month").value;
+            var yearint=parseInt(yearStr);
+            var monthint=parseInt(monthStr);
+            judgeInput(yearStr,monthStr);
+            judgeNumber(yearint,monthint);
+            if(yearint%4 == 0&& yearint%100 !=0 ||yearint %400 == 0){
+                month_run(monthint);
+            }else {
+                month_ping(monthint);
+            }
+        }
+        function month_ping(monthint){
+            switch (monthint){
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    document.getElementById("tip").innerHTML = "31天";
+                    break;
+                case 2:
+                    document.getElementById("tip").innerHTML = "28天";
+                    break;
+                default:
+                    document.getElementById("tip").innerHTML = "30天";
+                    break;
+            }
+        }
+        function month_run(monthint){
+            switch (monthint){
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    document.getElementById("tip").innerHTML = "31天";
+                    break;
+                case 2:
+                    document.getElementById("tip").innerHTML = "29天";
+                    break;
+                default:
+                    document.getElementById("tip").innerHTML = "30天";
+                    break;
+            }
+        }
+        function judgeInput(yearint,monthint){
+            if(yearint == ""){
+                alert("请输入年份！");
+            }else if(monthint == ""){
+                alert("请输入月份！");
+            }
+        }
+        function judgeNumber(yearint,monthint){
+            if(yearint < 1){
+                alert("输入的年份有误");
+            }
+            if(monthint > 12 || monthint < 1){
+                alert("输入的月份有误");
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--请输入年份<input type="text" id="year" >-->
+    <!--请输入月份<input type="text" id="month" ><span id = "tip"></span><br>-->
+    <!--<input type="button" value="计算" onclick="judge()">-->
+    <div class="container">
+        <table class = "table table-hover table-bordered text-center">
+            <tr>
+                <td class = "bg-primary text-white">年份</td>
+                <td class = "bg-info text-white">月份</td>
+                <td class = "bg-success text-white">天数</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="year" onmouseover="this.value = '请输入年份'" onfocus = "this.value = ''"></td>
+                <td><input type="text" id="month"  onfocus = "this.value = ''"></td>
+                <td><span id = "tip"></span></td>
+            </tr>
+        </table>
+        <input type="button" class="bg-warning text-white" value="计算" onclick="calc()">
+    </div>
+</body>
+</html>
