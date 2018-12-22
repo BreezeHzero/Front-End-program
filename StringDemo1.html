@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String字符串方法练习</title>
+    <script src = "../Day02/bootstrap.min.js"></script>
+    <script src = "../Day02/jquery.min.js"></script>
+    <link rel = "stylesheet" href = "../Day02/bootstrap.min.css">
+    <script>
+        /*
+        * 检测小数点的合法性
+        * */
+        function checkIsequal(){
+            var str = document.getElementById("xiaoshu").value;
+            var first = str.indexOf(".");
+            var last = str.lastIndexOf(".");
+            if(first == last){
+                document.getElementById("xiaoshutip").innerHTML = "";
+            }else{
+                document.getElementById("xiaoshutip").innerHTML = "小数输入不合法！"
+                return;
+            }
+        }
+        /*
+        * trim()在用户登录中的用法
+        * */
+        function checkunaem(){
+            var username = document.getElementById("uname").value;
+            if(username.trim() == "aaa"){
+                document.getElementById("unametip").innerHTML = "用户名输入正确！";
+            }else{
+                document.getElementById("unametip").innerHTML = "用户名输入错误！";
+                return;
+            }
+        }
+        /*
+        * split()分离字符串方法的应用
+        * */
+        function splitString(){
+            var str = document.getElementById("String").value;
+            var str1 = str.split("%");
+            //分割字符串为两部分，所以str1.length=2
+            for(var i = 0;i < str1.length;i ++){
+                document.getElementById("str1").innerHTML = str1[0];
+                document.getElementById("str2").innerHTML = str1[1];
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--<table class = "table">
+        <tr>
+            <td class = "bg-info">请输入小数：</td>
+            <td><input type = "text" id = "xiaoshu"><span id = "xiaoshutip" class = "text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><input type = "button" value = "计算" class = "bg-success" onclick="checkIsequal()"></td>
+        </tr>
+    </table>-->
+    <!--<table class = "table-bordered">
+        <tr>
+            <td class = "bg-info">用户名</td>
+            <td><input type = "text" id = "uname"><span id = "unametip" class = "text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><input type = "button" value = "登录" class = "bg-success" onclick = "checkunaem()"></td>
+        </tr>
+    </table>-->
+    <table class = "container-fluid table">
+        <tr>
+            <td class = "bg-info">输入字符串</td>
+            <td><input type = "text" id = "String"></td>
+        </tr>
+        <tr>
+            <td id = "str1">string1</td>
+            <td id = "str2">string2</td>
+        </tr>
+        <tr>
+            <td><input type = "button" value = "分离" class = "bg-success" onclick="splitString()"></td>
+        </tr>
+    </table>
+
+    <script>
+        /*var str="How are you doing today?"
+        document.write(str.split(" ") + "<br>");
+        document.write(str.split("") + "<br />");
+        document.write(str.split(" ",3));*/
+    </script>
+</body>
+</html>
