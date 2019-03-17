@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>background&display样式使用</title>
+    <style>
+        body{
+            width: 1000px;
+            height: 600px;
+            margin: auto;
+        }
+        .div1{
+            /*背景图当不能铺满元素时，会自动沿x,y方向平铺
+              background-image: 在url中写入图片地址
+              background-repeat：调整平铺方式，方向(repeat-x/y no-repeat)
+              background-position: 调整图片位置(百分比，像素值，center/top等)
+              background-size: 调整图片大小(百分比 会不正常拉伸  contain 不失真的平铺 cover 进一步的放大比例)
+
+              开发中简写模式：image,repeat,position,color会写在一起   size另起一行
+            */
+            /*background-image: url('data:image/jpeg;base64,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');*/
+            /*background-repeat: no-repeat;*/
+            /*background-color: aquamarine;*/
+            /*background-position: center center;*/
+            background: url('../images/rotary_picture_down3_10.jpg') no-repeat rosybrown center center;
+            background-size: contain;
+        }
+        ul>li{
+            /*
+              display修改块级、行级元素的标志（图片，链接，列表摆放）
+              块级元素(霸道的一面：独占一行)：div,form,table,p,ul,ol等 display：block
+              行内元素（共享一行,且不可调整盒子）：span,a,image,button,input,label等  display:inline, inline-flex(弹性盒子 扩充区域)
+              中间元素：inline-block
+            */
+            display: inline-flex;
+            line-height: 60px;
+            background-color: red;
+            font-size: 24px;
+        }
+        a:link{/*去除链接下划线*/
+            text-decoration: none;
+        }
+        a:hover {/*悬停鼠标*/
+            text-decoration:underline;color:black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><a href="https://www.baidu.com">百度一下，你就知道</a></li>
+            <li><a href="http://www.vvgroup.com/">维维豆奶，欢乐开怀</a></li>
+            <li><a href="http://www.sdlxgc.com/">挖掘机技术哪家强？中国山东找蓝翔</a></li>
+        </ul>
+    </div>
+    <div class="div1">
+        <h4>增加一块相同磁盘，调整为RAID1模式。读写两方面分析，是否能够改善磁盘IO问题？</h4>
+        <p style="text-align: center; color: blueviolet">
+            从读的方面来看：当原始数据繁忙时，可直接从镜像拷贝中读取数据，因此RAID1可以提高读取性能，也提高了磁盘的存储空间。增加一个RAID1可以提高磁盘的存储空间，在一定程度上提高了读速度，加强了系统的可靠性。但是增加RAID1，系统变成四块硬盘，同时也就增加了系统的I/O开销，当数据量大时，并不能很好地提高系统的读的速度。
+            从写的方面来看：RAID1磁盘阵列的写入速度通常较慢，因为数据得分别写入两块硬盘中并做比较。现在增加了一块RAID1磁盘阵列，相当于有四块硬盘，在写入数据时，可能会做两个备份，写入的速度更慢。
+            因此从读写两个方面来说，增加一块RAID1磁盘阵列不是解决问题的好的方式，这种方法不建议使用。
+        </p>
+        <p style="color: yellow; ">
+            2019年3月16日，由新浪文化和洋河股份梦之蓝书社联合主办的“好书分享会：《国家宝藏》致我们年轻的上下五千年”在成都钟书阁书店举行。
+        </p>
+        <p>
+            中央广播电视总台《国家宝藏》制片人、总导演于蕾携栏目同名图书《国家宝藏》出席，与四川博物院副院长韦荃、中国文化遗产研究院研究员詹长法、洋河股份市场部副部长李小玉、贾平凹文学艺术馆馆长木南等重磅嘉宾，围绕“《国家宝藏》对文化传播多样及文物保护的启示”的话题展开讨论，共同致敬中华五千年的璀璨文明。
+        </p>
+        <p>
+            2018年末，梦之蓝携手中央广播电视总台打造梦之蓝《国家宝藏》第二季节目，自12月9日首播，便得到了流量、口碑、话题性等多领域的认可：豆瓣网上的评分高达9.4；哔哩哔哩网站播放总量超2000万次、有万人弹幕应援，评分高达9.8分；新浪微博开播第一期便全站1.7亿的视频播放等等，该节目成功成为一档全民热追的“现象级”综艺节目。
+        </p>
+    </div>
+</body>
+</html>
