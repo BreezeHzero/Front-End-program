@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text-align & vertical-align</title>
+    <style>
+        body{
+            width: 1000px;
+            height: 600px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <h1>
+            text-align作用于块级元素，实现块级元素中包含的每一行文本或者是行内元素的水平对齐方式，可继承
+            vertical-align作用于块级元素中可能包含的具体的行内元素，具体来控制行内元素的垂直对齐方式，不具有继承
+        </h1>
+        <h4>增加一块相同磁盘，调整为RAID1模式。读写两方面分析，是否能够改善磁盘IO问题？</h4>
+        <p style="text-align: center; color: blueviolet; ">
+            从读的方面来看：当原始数据繁忙时，可直接从镜像拷贝中读取数据，因此RAID1可以提高读取性能，也提高了磁盘的存储空间。增加一个RAID1可以提高磁盘的存储空间，在一定程度上提高了读速度，加强了系统的可靠性。但是增加RAID1，系统变成四块硬盘，同时也就增加了系统的I/O开销，当数据量大时，并不能很好地提高系统的读的速度。
+            从写的方面来看：RAID1磁盘阵列的写入速度通常较慢，因为数据得分别写入两块硬盘中并做比较。现在增加了一块RAID1磁盘阵列，相当于有四块硬盘，在写入数据时，可能会做两个备份，写入的速度更慢。
+            因此从读写两个方面来说，增加一块RAID1磁盘阵列不是解决问题的好的方式，这种方法不建议使用。
+        </p>
+        <p style="color: yellow">
+            2019年3月16日，由新浪文化和洋河股份梦之蓝书社联合主办的“好书分享会：《国家宝藏》致我们年轻的上下五千年”在成都钟书阁书店举行。
+        </p>
+        <!--justify将段落拉伸 不作用在图片和最后一行
+            line-height 行高2 即16*2像素高(浏览器默认16元素)
+            vertical-align 默认baseline    middle对齐文本基线  text-bottom/top文本边缘线  bottom对齐span中的虚拟行盒
+            vertical-align 10px;  在baseline的基础上往上移10px
+                           10%    image的行高（继承自span）的10%
+        -->
+        <span style="text-align: justify; width:400px;height:300px; line-height: 2.0; background-color: aquamarine">
+            中央广播电视总台《国家宝藏》制片人macH
+            <image src="../images/于蕾.jpg" style="width: 100px; height: 140px; vertical-align: middle"/>、
+            总导演于蕾macf<image src="../images/于蕾.jpg" style="width: 80px; height: 80px;vertical-align: baseline"/>携栏目
+            同名图书《国家宝藏》出席，<image src="../images/于蕾.jpg" style="width: 80px; height: 80px;vertical-align: 10px"/>与
+            四川博物院副院长韦荃、中国文化遗产研究院研究员詹长法、洋河股份市场部副部长李小玉、贾平凹文学艺术馆馆长木南等重磅嘉宾，围绕“《国家宝藏》对文化传播多样及文物保护的启示”的话题展开讨论，共同致敬中华五千年的璀璨文明。
+        </span>
+        <p>
+            2018年末，梦之蓝携手中央广播电视总台打造梦之蓝《国家宝藏》第二季节目，自12月9日首播，便得到了流量、口碑、话题性等多领域的认可：豆瓣网上的评分高达9.4；哔哩哔哩网站播放总量超2000万次、有万人弹幕应援，评分高达9.8分；新浪微博开播第一期便全站1.7亿的视频播放等等，该节目成功成为一档全民热追的“现象级”综艺节目。
+        </p>
+        <image src="../images/于蕾.jpg" style="width: 100px; height: 140px;"/>
+    </div>
+</body>
+</html>
