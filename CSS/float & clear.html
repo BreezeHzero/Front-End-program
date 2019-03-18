@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动和清除</title>
+    <style>
+        body{
+            width: 600px;
+            margin: 0 auto;
+        }
+        p{
+            text-align: center;
+            width: 100px;
+            margin: 0px;
+        }
+        .p1{
+            background-color: yellow;
+            height: 200px;
+        }
+        .p2{
+            background-color: blue;
+            height: 100px;
+        }
+        .p3{
+            width:300px;
+            background-color: red;
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <span>float
+        原div高度 = 容器高 = 420px
+        现在p1，p2跳出div  div高度变为p3容器高 = 120px, p3被p1,p2遮住
+    </span>
+    <h5>p1,p2,p3全部浮动，则div高度为0</h5>
+    <h5>浮动有顺序，按顺序浮动</h5>
+    <div style="border: 1px solid yellowgreen; height:200px">
+        <p class="p1" style="float: left">p1</p>
+        <p class="p2" style="float: left">p2</p>
+        <p class="p3" style="float: left">p3</p>
+    </div>
+    <h5>清除  例：p1左浮动，p2右浮动，p3不浮动但不想被遮住</h5>
+    <h6>clear: left(以左为主)，right, both 默认为none</h6>
+    <div style="border: 1px solid black; float: left">
+        <p class="p1" style="float: left">p1</p>
+        <p class="p2" style="float: right">p2</p>
+        <p class="p3" style="clear: left">p3</p>
+    </div>
+</body>
+</html>
