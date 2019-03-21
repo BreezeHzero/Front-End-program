@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位练习</title>
+    <style>
+        *{
+            magin: 0;
+            padding: 0;
+        }
+        body{
+            width: 400px;
+            margin: 0 auto;
+            height: 3000px;
+        }
+        /*以下是对定位的练习*/
+        #div1{
+            width: 100px;
+            height: 200px;
+            background-color: #FF6785;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            z-index: 1;
+        }
+        #div2{
+            width: 120px;
+            height: 80px;
+            background-color: yellowgreen;
+            position: relative;
+            /*z-index: 2;*/     /*z-index调整z轴坐标信息，切换上下层场景*/
+        }
+        /*以下是把复选框用absolute的实现*/
+        ul{
+            background-color: white;
+            color: white;
+        }
+        li{
+            background-color: black;
+            line-height: 3.0;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        input{
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+        }
+        /*以下是联系方式的多屏固定实现*/
+        label{
+            width: 80px;
+            height: 80px;
+            display: block;
+            color: #FF6785;
+            background-color: green;
+            line-height: 80px;
+            text-align: center;
+            position: fixed;
+            /*top: 30px;*/
+            /*right: 30px;*/
+            top: 50%;
+            margin-top: -40px;      /*随视口变化垂直居中：百分比+外边距的逆变换*/
+            right: 30px;
+        }
+        /*以下是腾讯课堂登录的多屏屏幕居中实现*/
+        #screenLock{
+            top: 0px;
+            left: 0px;
+            background: #959595;
+        }
+        #div3{
+            width: 300px;
+            height: 200px;
+            text-align: center;
+            background-color: white;
+            position: fixed;
+            top: 50%;
+            margin-top: -100px;
+            left: 50%;
+            margin-left: -150px;
+        }
+
+        ol{
+            margin : 15px 25px;
+        }
+        ol:nth-child(1){
+            float: left;
+        }
+        ol:nth-child(2){
+            float: right;
+        }
+
+    </style>
+</head>
+<body id="screenLock">
+    <p>网页中元素的position默认为 static, 非定位元素
+        relative：相对于原位置产生变化,不影响其他的元素 top: 10; left: 10(实际用法：遮盖别的元素)
+        absolute: 绝对定位，从div中脱离，离他最近的定位元素作为参照物(实际用法：找参照物做相对定位)
+        fixed: 绝对定位，从div中脱离(实际用法：滚动页面中固定的联系方式、导航栏)
+    </p>
+
+    <div>
+        <div id="div1"></div>
+        <div id="div2"></div>
+    </div>
+    <!--
+        把li元素作为input元素的绝对定位的参照物
+        将li元素设置为relative
+    -->
+    <div>
+        <h5>选择看过的书</h5>
+        <ul>
+            <li>Hello code <input type="checkbox"></li>
+            <li>master javascript in 21 days <input type="checkbox"></li>
+            <li>js fullstack path<input type="checkbox"></li>
+        </ul>
+    </div>
+
+    <label>联系方式</label>
+
+    <div id="div3">
+        <ol>QQ账号登录</ol>
+        <ol>微信账号登录</ol>
+    </div>
+</body>
+</html>
