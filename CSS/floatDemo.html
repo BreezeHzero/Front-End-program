@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动</title>
+    <style>
+        body{
+            width: 1080px;
+            margin: 0 auto;
+        }
+        .user{
+        height: 89px;
+        }
+        .title{
+            height: 77px;
+            font-size: 24px;
+            border-bottom: 2px solid #f5f4f0;
+            line-height: 5.0;
+            margin-bottom: 15px;
+        }
+        .fl{
+            float: left;
+        }
+        .fr{
+            float: right;
+        }
+        .clearfix::after{
+            content: ".";
+            display: block;
+            clear: both;
+            visibility: hidden;
+            height: 0px;
+        }
+    </style>
+</head>
+<body>
+    <!--解决浮动带来的网页内容错误-->
+    <!--由于采用浮动布局网页，导致div高度变为0，之后加载的网页元素会紧跟着div.会被覆盖住
+        法1. 给div添加固定的高度
+        法2. 添加样式 overflow: hidden
+        法3. 让之后的div也浮动起来
+        法4. 虚拟子元素,效果最佳用的最广
+    -->
+    <div class="title" style="color: red;font-size: 20px;border-bottom: none">用户晒单</div>
+    <div class="clearfix">
+        <div class="fl"><img src="../images/user1_54.jpg"></div>
+        <div class="fl"><img src="../images/user2_55.jpg"></div>
+        <div class="fl"><img src="../images/user3_56.jpg"></div>
+    </div>
+    <div class="title">用户评价</div>
+    <div class="clearfix">
+        <div class="fl"><img src="../images/user1_54.jpg"></div>
+        <div class="fl"><img src="../images/user2_55.jpg"></div>
+        <div class="fl"><img src="../images/user3_56.jpg"></div>
+    </div>
+</body>
+</html>
