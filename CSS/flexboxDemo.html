@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹性盒子的相关属性值</title>
+    <style>
+        *{
+            marin: 0px;
+            padding: 0px;
+        }
+        body{
+            margin: 0 auto;
+            width: 260px;
+        }
+        .container{
+            height: 400px;
+            display: flex;  /*调整方式为flex*/
+            flex-direction: row;/*flex-direction(主轴方向)默认取值是 row*/
+            flex-wrap: nowrap;/*flex-wrap默认取值是 nowrap(不自动换行)，不够会被压缩*/
+            flex-flow: row wrap;/*direction和wrap结合，简写属性*/
+            justify-content: space-around;
+            /*默认flex-start,沿主轴调节对齐方式 space-between留有空白间隔，使他占满整个宽度
+                space-around将空间平分在每个flex item左右两侧*/
+            align-content: space-between;/*默认stretch(相较于原始item的增量相同),作用于多行; flex-start取决于内容高度;space-between垂直上占满空间*/
+            align-items: flex-start;/*默认stretch  flex-start沿开始线对齐*/
+        }
+        .box{
+            width: 100px;
+            /*height: 100px;*/
+            text-align: center;
+        }
+        .box1{
+            background-color: #FF6785;
+        }
+        .box2{
+            background-color: #959595;
+        }
+        .box3{
+            background-color: green;
+            /*order: -1;!*默认0，改变权重，越小最先显示*!*/
+            align-self: flex-start;/*定义局部的控制方式；不设置会继承父元素的align-items*/
+            /*flex-grow: 1;!*增长因子将一行中空出的空间平分加到item*!*/
+            /*flex-shrink: 1;!*收缩因子*!*/
+            /*flex-basis: 90px;!*原始大小*!*/
+            flex:1 1 80px ;/*flex-grow,flex-shrink,flex-basis 的简写属性，默认值 1 1 auto*/
+        }
+        .box4{
+            background-color: yellow;
+        }
+        .box5{
+            background-color: red;
+        }
+        .box6{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+        <div class="box box6">6</div>
+    </div>
+</body>
+</html>
