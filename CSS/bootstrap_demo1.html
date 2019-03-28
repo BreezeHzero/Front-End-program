@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BootStrap应用</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .col{
+            background-color: aquamarine;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!--col-[breakpoint]-auto根据内容大小调整宽度
+            col-        超小 <=576
+            col-sm-     小   >=576
+            col-md-     中等 >=768
+            col-lg-     大   >=992
+            col-xl-     超大 >=1200
+        -->
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-2">1</div>
+            <div class="col col-md-auto">2</div>
+        </div>
+        <div class="row">
+            <!--BootStrap中一行被划分为12列，可以通过col-x来指定几行几列的宽度-->
+            <div class="col col-12">3</div>
+            <div class="col">4</div>
+            <div class="col col-5">5</div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <h5>超大一行显示6个，大显示4个，中等显示3个，小显示2个，超小显示1个</h5>
+        <div class="row">
+            <div class="col col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">1</div>
+            <div class="col col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">2</div>
+            <div class="col col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">3</div>
+            <div class="col col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">4</div>
+            <div class="col col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">5</div>
+            <div class="col col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">6</div>
+        </div>
+    </div>
+    <div class="container">
+        <h5>垂直对齐方式</h5>
+        <!--align-self-[start/end/center]调整单个元素的对齐方式-->
+        <div class="row align-items-center" style="background-color: #959595;height:100px">
+            <div class="col align-self-start">1</div>
+            <div class="col">2</div>
+            <div class="col align-self-end">3</div>
+        </div>
+        <h5>水平对齐方式</h5>
+        <div class="row justify-content-center">
+            <div class="col col-md-6 order-last">1</div>
+            <div class="col col-md-6">2</div>
+            <div class="col col-md-6 order-first">3</div>
+        </div>
+        <h5>偏移量使用</h5>
+        <div class="row">
+            <!--解释：col-md-x offset-md-y  x样式的元素相对于之前的元素平移y样式下的一列-->
+            <div class="col col-md-3">1</div>
+            <div class="col col-md-3">2</div>
+            <div class="col col-md-3 offset-md-3">3</div><!--使用order变换顺序可以看出效果-->
+
+            <div class="col col-md-3 offset-md-3">1</div>
+            <div class="col col-md-3 offset-md-3">2</div>
+
+            <div class="col col-md-6 offset-md-3">1</div>
+        </div>
+        <h5>嵌套</h5>
+        <div class="row">
+            <div class="col col-md-6">
+                Level 1: .col-md-6
+                <div class="row">
+                    <div class="col col-md-6">
+                        Level 2: .col-md-6
+                        <div class="row">
+                            <div class="col col-md-3">3-1</div>
+                            <div class="col col-md-3">3-2</div>
+                        </div>
+                    </div>
+                    <div class="col col-md-4">
+                        Level 2: .col-md-4
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
