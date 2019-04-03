@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习案例3</title>
+    <style>
+        /*以下是基本网页样式*/
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url("../images/bg_01.jpg");
+            margin: 0;
+        }
+        .w{
+            width: 940px;
+            margin: 0 auto;
+        }
+        .fl{
+            float: left;
+        }
+        .fr{
+            float: right;
+        }
+        .clearfix::after{
+             content: ".";
+             display: block;
+             clear: both;
+             visibility: hidden;
+             height: 0;
+         }
+        /*以下是header样式*/
+        .header{
+            height: 143px;
+            background-image: url("../images/header_bg_03.jpg");
+        }
+        #em{
+            line-height: 31px;
+        }
+        ol>li{
+            display: inline-flex;
+            margin-left: 13px;
+            margin-top: 7px;
+            margin-bottom: 7px;
+        }
+        #em span:nth-child(1){
+            color: red;
+        }
+        #em span:nth-child(2){
+            color: #4dfeff;
+        }
+        .header_ul{
+            margin: 26px 0;
+        }
+        .header_ul>ul>li{
+            display: inline-flex;
+            margin: 11px 22px;
+        }
+        #logo_23{
+            margin-left: 7px;
+            margin-top: 10px;
+            margin-bottom: 11px;
+        }
+        #banner_31{
+            background-image: url("../images/banner_31.jpg");
+            height:420px;
+        }
+        /*以下是main样式*/
+        .main_top{
+            height:256px;
+            background-image: url("../images/bg_main_top_26_40.png");
+        }
+        .main_top>div{
+            width: 290px;
+            height: 203px;
+            margin-top: 53px;
+            margin-right: 34px;
+        }
+        .main_top div:nth-child(3){
+            margin-right: 0;
+        }
+        .main_top>div>div>span{
+            color:red;
+        }
+        .feature_content{
+            margin-top: 20px;
+        }
+        .feature_title{
+            font-family: 微软雅黑;
+            font-weight: bold;
+            font-size: 16px;
+            color: #356E7F;
+            padding-top: 16px;
+            padding-left: 13px;
+            padding-bottom: 5px;
+        }
+        .feature_title2{
+            font-family: 微软雅黑;
+            font-weight: bold;
+            font-size: 10px;
+            color: #9A9A9A;
+            padding-top: 6px;
+            padding-left: 13px;
+            padding-bottom: 3px;
+        }
+        .container{
+            display: inline-flex;
+            font-size: 11px;
+        }
+        .main_bottom{
+            background-image: url("../images/project_bg_53.jpg");
+            height:375px;
+        }
+        .main_ul>ul>li{
+            display: inline-flex;
+            margin-top: 47px;
+            margin-left: 12px;
+            color:#7E7E7E;;
+        }
+        .main_bottom_picture>div{
+            padding: 5px;
+            margin:15px;
+        }
+        .main_bottom_picture div:nth-child(1){
+            margin-left: 5px;
+        }
+        .main_bottom_picture div:nth-child(4){
+            margin-right: 5px;
+        }
+        .main_bottom_title div:nth-child(1){
+            font-size: 19px;
+            color: #35768A;
+            margin-top: 39px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header w">
+        <div class="header_top clearfix">
+            <div id="em" class="fl">E-mail:<span>mail@yoursite.com</span> | Mobile:<span>123 456 789</span></div>
+            <div class="fr">
+                <ol>
+                    <li><img src="../images/coversation_06.jpg"></li>
+                    <li><img src="../images/coversation_08.jpg"></li>
+                    <li><img src="../images/coversation_10.jpg"></li>
+                    <li><img src="../images/coversation_12.jpg"></li>
+                    <li><img src="../images/coversation_14.jpg"></li>
+                </ol>
+            </div>
+        </div>
+        <div class="header_bottom clearfix">
+            <div id="logo_23" class="fl"><img src="../images/logo_23.jpg"></div>
+            <div class="fr header_ul">
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Portfolio</li>
+                    <li>Blog</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="banner">
+        <div id="banner_31"></div>
+    </div>
+    <div class="main w">
+        <div class="main_top container">
+            <div>
+                <div class="container">
+                    <div><img src="../images/feature_t_img_01.jpg"></div>
+                    <div>
+                        <div class="feature_title">Web and UX Design</div>
+                        <div class="feature_title2">Graeci lines mollis ne eos in.</div>
+                    </div>
+                </div>
+                <div class="feature_content">Ex pri dictas patentium constituto, cum cu facilis blandit. Dicat summo duo ea, ex sed assum delicatissimi.
+                    Has pertinax pericula accommodare ei, diam facer deterruisset eum et.
+                </div>
+            </div>
+            <div>
+                <div class="container">
+                    <div><img src="../images/feature_t_img_02.jpg"></div>
+                    <div>
+                        <div class="feature_title">Web Development</div>
+                        <div class="feature_title2">Graeci lines mollis ne eos in.</div>
+                    </div>
+                </div>
+                <div class="feature_content">Ex pri dictas patentium constituto, cum cu facilis blandit. <span>Dicat summo duo</span> ea, ex sed assum delicatissimi.
+                    Has pertinax pericula accommodare ei, diam facer deterruisset eum et.
+                </div>
+            </div>
+            <div>
+                <div class="container">
+                    <div><img src="../images/feature_t_img_03.jpg"></div>
+                    <div>
+                        <div class="feature_title">Web and UX Design</div>
+                        <div class="feature_title2">Graeci lines mollis ne eos in.</div>
+                    </div>
+                </div>
+                <div class="feature_content">Ex pri dictas patentium constituto, cum cu facilis blandit. Dicat summo duo ea, ex sed assum delicatissimi.
+                    Has pertinax pericula <span>accommodare ei</span>, diam facer deterruisset eum et.
+                </div>
+            </div>
+        </div>
+        <div class="main_center"><img src="../images/who_bg_51.jpg"></div>
+        <div class="main_bottom">
+            <div class="main_bottom_title clearfix">
+                <div class="fl">Latest Projects </div>
+                <div class="fr main_ul">
+                    <ul>
+                        <li>All Projects</li>
+                        <li>Web Design</li>
+                        <li>Logo Design</li>
+                        <li>Print</li>
+                        <li>Illustrations</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container main_bottom_picture">
+                <div><img src="../images/project_b_img_60.jpg"></div>
+                <div><img src="../images/project_b_img_63.jpg"></div>
+                <div><img src="../images/project_b_img_65.jpg"></div>
+                <div><img src="../images/project_b_img_67.jpg"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer w"></div>
+</body>
+</html>
