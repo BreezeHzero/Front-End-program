@@ -11,7 +11,7 @@ body{
     display: block;
     clear: both;
     visibility: hidden;
-    height: 0px;
+    height: 0;
 }
 .fl{
     float: left;
@@ -29,6 +29,7 @@ a:link{/*去除链接下划线*/
 li{
     display: inline-block;
 }
+
 /*以下是header样式*/
 #header{
     height: 824px;
@@ -44,10 +45,6 @@ li{
     height: 100px;
     display: flex;
 }
-/*.menu a:link{!*去除链接下划线*!*/
-    /*text-decoration: none;*/
-    /*color: black;*/
-/*}*/
 .menu a:hover {/*悬停鼠标*/
     color:orange;
 }
@@ -56,14 +53,15 @@ li{
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-align: center;
     line-height: 100px;
     color: #333;
     position: absolute;
-    left: 356px;
+    left: 50%;
+    margin-left: -356px;
 }
 .navigation li{
-    margin: 0px 20px;
+    display: inline-block;
+    margin: 0 20px;
 }
 .header-controls{
     display: flex;
@@ -74,12 +72,11 @@ li{
 .text-active{
     width: 1000px;
     height: 334px;
-    position: relative;
-    left: 259.5px;
+    position: absolute;
+    left: 50%;
+    margin-left: -500px;
 }
 .text1{
-    font-family: "Montserrat";
-    text-align: center;
     font-size: 20px;
     letter-spacing: 6px;
     color: #222222;
@@ -88,9 +85,7 @@ li{
     left: 332px;
 }
 .text2{
-    border: 7px;
-    border-style: solid;
-    text-align: center;
+    border: 7px solid;
     letter-spacing: 6px;
     font-size: 50px;
     padding: 20px 50px;
@@ -100,16 +95,15 @@ li{
 }
 .text3{
     font-family: Raleway, "Open Sans", Arial, sans-serif;
-    text-align: center;
     font-style: italic;
     position: absolute;
     top: 251px;
     left: 329px;
     font-size: 30px;
 }
+
 /*以下是content样式*/
 #section-pad{
-    height: 875px;
     margin-left: 30px;
     margin-right: 30px;
     padding-top: 90px;
@@ -164,9 +158,21 @@ li{
 
 #active-image{
     height: 284px;
+    margin-bottom: 114px;
 }
-#active-image div{
-    width: 270px
+.active-image-div{
+    text-align: center;
+    width: 380px;
+    background-color: #EDF0F2;
+    position: relative;
+}
+#active-image div:nth-child(odd){
+    background-color: #F2F5F8;
+}
+.active-image-div span{
+    position: absolute;
+    bottom: 141px;
+    right: 134px;
 }
 
 #section-phone {
@@ -200,7 +206,7 @@ li{
 }
 
 #our-work{
-    padding: 90px 0px;
+    padding-top: 90px;
 }
 .our-work-items{
     font-family: Montserrat, "Open Sans", Arial, sans-serif;
@@ -224,4 +230,138 @@ li{
 .our-work-img div{
     margin-left: 40px;
     margin-bottom: 40px;
+}
+.view-all-work-h{
+    width: 180px;
+    height: 47px;
+    /*使用绝对定位将div元素居中*/
+    position: absolute;
+    left: 50%;
+    margin-left: -90px;
+}
+.view-all-work-h h4{
+    padding: 15px 25px;
+    border: 2px solid black;
+    font-family: Montserrat, "Open Sans", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    color: #333333;
+}
+.view-all-work-h h4:hover{
+    background-color: #E0A240;
+    font-family: Montserrat, "Open Sans", Arial, sans-serif;
+    font-size: 13px;
+    color: white;
+    border-style: none;
+}
+.view-all-work-icon-div {
+    width: 700px;
+    height: 224px;
+    position: absolute;
+    left: 50%;
+    margin-left: -350px;
+}
+.view-all-work-icon{
+    background-color: #F2F3F8;
+    height: 244px;
+    margin-top: 113px;
+    padding: 90px 0;
+}
+.view-all-work-icon-div p{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 20px;
+}
+.view-all-work-icon-div a{
+    color: #e0a240;
+}
+.view-all-work-icon-div span{
+    text-transform: uppercase;
+    line-height: 32px;
+    font-size: 15px;
+}
+.our-clients-img{
+    display: flex;
+    justify-content: center;
+}
+.our-clients-img div{
+    margin-left: 20px;
+}
+.get-in-touch{
+    height: 338px;
+    margin-top: 90px;
+    background-color: black;
+    color: white;
+}
+.get-in-touch-div{
+    /*height: 338px;*/
+    padding: 90px 0;
+}
+.get-in-touch-div h4{
+    line-height: 42px;
+    padding-bottom: 15px;
+}
+.get-in-touch-div p{
+    line-height: 26px;
+    padding-bottom: 30px;
+}
+.get-in-touch-div a{
+    display: inline-block;
+    text-align: center;
+    width: 74px;
+    height: 13px;
+    padding: 15px 20px;
+    font-size: 13px;
+    line-height: 14px;
+    background-color: #e0a240;
+}
+.get-in-touch-div a:hover{
+    background-color: black;
+    color: white;
+    font-size: 13px;
+    line-height: 14px;
+}
+
+/*footer样式*/
+#footer{
+    background-color: #F2F3F8;
+}
+.footer-div{
+    margin-left: 58px;
+    width: 246.5px;
+}
+.footer-div1 p{
+    margin-bottom: 30px;
+}
+.footer-div1 i{
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+.footer-div h6{
+    display: block;
+    line-height: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+.footer-div2 a{
+    padding-left: 55px;
+}
+.links-item{
+    margin-bottom: 10px;
+}
+.links-item span{
+    padding-left: 25px;
+}
+.footer-div4-img{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.copyright span{
+    display: block;
+    padding: 25px 0;
 }
